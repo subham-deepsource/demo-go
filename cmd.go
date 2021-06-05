@@ -28,7 +28,7 @@ func runCmd(command string, args []string, env []string, cmdDir string) (string,
 
 	err := cmd.Start()
 	if err != nil {
-		return string(stdoutBuf.Bytes()), string(stderrBuf.Bytes()), err
+		return stdoutBuf.String(), stderrBuf.String(), err
 	}
 
 	log.Println("==> EXEC COMMAND " + command)
@@ -57,7 +57,7 @@ func runCmd(command string, args []string, env []string, cmdDir string) (string,
 			log.Println("-> TIME TAKEN: ", time.Now().Sub(startTime)/time.Millisecond)
 			log.Println("==> END EXEC COMMAND " + command + "\n")
 
-			return string(stdoutBuf.Bytes()), string(stderrBuf.Bytes()), err
+			return stdoutBuf.String(), stderrBuf.String(), err
 		}
 	}
 
@@ -68,7 +68,7 @@ func runCmd(command string, args []string, env []string, cmdDir string) (string,
 		log.Println("Both stdout and stderr have same value")
 	}
 
-	return string(stdoutBuf.Bytes()), string(stderrBuf.Bytes()), nil
+	return stdoutBuf.String(), stderrBuf.String(), nil
 }
 
 func ExampleOpenFile() {
