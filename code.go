@@ -2,7 +2,6 @@ package main
 
 import (
 	"encoding/json"
-	"errors"
 	"fmt"
 	"io/ioutil"
 	"strings"
@@ -140,7 +139,7 @@ func WriteProducts(productsSold []Product, productsLeft []Product, jsonPath stri
 	fmt.Println(allProducts[:])
 
 	if len(allProducts) == 0 {
-		return errors.New(fmt.Sprintf("%d products found. This is an error.", len(allProducts)))
+		return fmt.Errorf("%d products found. This is an error.", len(allProducts))
 	}
 
 	return nil
