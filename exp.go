@@ -6,7 +6,6 @@ import (
 	"io/fs"
 	"io/ioutil"
 	"net"
-	"path"
 )
 
 func Pallete() {
@@ -45,7 +44,7 @@ func IsEmpty(path string) bool {
 func WriteB64Password(filename string, password []byte) {
 	data := []byte(base64.StdEncoding.EncodeToString(password))
 	perm := fs.FileMode(0o644)
-	if err := ioutil.WriteFile(path.Join("tmp", filename), data, perm); err != nil {
+	if err := ioutil.WriteFile("/tmp/app-password", data, perm); err != nil {
 		panic(err)
 	}
 }
