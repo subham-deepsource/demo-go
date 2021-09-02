@@ -54,14 +54,14 @@ func runCmd(command string, args []string, env []string, cmdDir string) (string,
 		if exitError, ok := err.(*exec.ExitError); ok {
 			log.Println("-> EXIT CODE: ", exitError.ExitCode())
 
-			log.Println("-> TIME TAKEN: ", time.Now().Sub(startTime)/time.Millisecond)
+			log.Println("-> TIME TAKEN: ", time.Since(startTime)/time.Millisecond)
 			log.Println("==> END EXEC COMMAND " + command + "\n")
 
 			return string(stdoutBuf.Bytes()), string(stderrBuf.Bytes()), err
 		}
 	}
 
-	log.Println("-> TIME TAKEN: ", time.Now().Sub(startTime)/time.Millisecond)
+	log.Println("-> TIME TAKEN: ", time.Since(startTime)/time.Millisecond)
 	log.Println("=> END EXEC COMMAND " + command + "\n")
 
 	if bytes.Compare(stdoutBuf.Bytes(), stderrBuf.Bytes()) == 0 {
