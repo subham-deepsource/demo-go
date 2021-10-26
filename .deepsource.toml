@@ -6,6 +6,8 @@ enabled = true
 
   [analyzers.meta]
   import_root = "github.com/subham-deepsource/demo-go"
+  goprivate = "github.com/deepsourcelabs/*"
+  goproxy = "proxy.golang.org,direct"
 
 [[transformers]]
 name = "gofmt"
