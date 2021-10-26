@@ -5,17 +5,7 @@ name = "go"
 enabled = true
 
   [analyzers.meta]
-  import_paths = ["github.com/deepsourcelabs/demo-go"]
-
-[[analyzers]]
-name = "docker"
-enabled = true
-
-  [analyzers.meta]
-  dockerfile_paths = [
-    "./env/Dockerfile_dev",
-    "./env/Dockerfile_prod"
-  ]
+  import_root = "github.com/subham-deepsource/demo-go"
 
 [[transformers]]
 name = "gofmt"
