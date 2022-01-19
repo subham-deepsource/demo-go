@@ -10,3 +10,9 @@ enabled = true
 [[transformers]]
 name = "gofmt"
 enabled = true
+
+
+[[transformers]]
+name = "gofumpt"
+enabled = true
+
