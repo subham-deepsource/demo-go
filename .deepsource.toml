@@ -8,9 +8,5 @@ enabled = true
   import_root = "github.com/subham-deepsource/demo-go"
 
 [[transformers]]
-name = "gofmt"
-enabled = true
-
-[[transformers]]
 name = "gofumpt"
 enabled = true
