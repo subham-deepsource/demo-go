@@ -11,8 +11,6 @@ enabled = true
 name = "gofmt"
 enabled = true
 
-
 [[transformers]]
 name = "gofumpt"
 enabled = true
-
