@@ -28,4 +28,4 @@ This repository demonstrates sample issues in Go code raised by DeepSource.
 
 ### Documentation
 
-[https://deepsource.io/docs/analyzer/go.html](https://deepsource.io/docs/analyzer/go.html)
+[https://deepsource.io/docs/analyzer/go](https://deepsource.io/docs/analyzer/go)
