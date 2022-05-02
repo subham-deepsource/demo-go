@@ -61,7 +61,7 @@ func runCmd(command string, args []string, env []string, cmdDir string) (string,
 		}
 	}
 
-	log.Println("-> TIME TAKEN: ", time.Now().Sub(startTime)/time.Millisecond)
+	log.Println("-> TIME TAKEN: ", time.Now().Sub(startTime)/time.Millisecond) // skipcq
 	log.Println("=> END EXEC COMMAND " + command + "\n")
 
 	if bytes.Compare(stdoutBuf.Bytes(), stderrBuf.Bytes()) == 0 {
