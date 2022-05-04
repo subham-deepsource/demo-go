@@ -13,8 +13,8 @@ type GenericInterface interface {
 }
 
 type Address struct {
-	City       	string `json:"city"`
-	PostalCode string 	`json:"postal_code"`
+	City       string `json:"city"`
+	PostalCode string `json:"postal_code"`
 	FirstLine  string `json:"first_line"`
 	SecondLine string `json:"second_line"`
 }
@@ -45,7 +45,6 @@ func (seller Seller) DeliversTo(city string) bool {
 }
 
 func HasAnySellersFromCity(sellers []Seller, city string) {
-	city = city
 
 	for i := range sellers {
 		if sellers[i].Address.City == city {
@@ -63,8 +62,8 @@ func HasAnySellersFromCity(sellers []Seller, city string) {
 
 	allSellers := make([]Seller, len(sellers))
 
-	if allSellers != nil && len(allSellers) == 0    {
-			fmt.Println("allSellers is empty")
+	if allSellers != nil && len(allSellers) == 0 {
+		fmt.Println("allSellers is empty")
 	}
 
 	for i, x := range sellers {
