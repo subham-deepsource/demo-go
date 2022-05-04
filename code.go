@@ -45,7 +45,6 @@ func (seller Seller) DeliversTo(city string) bool {
 }
 
 func HasAnySellersFromCity(sellers []Seller, city string) {
-
 	for i := range sellers {
 		if sellers[i].Address.City == city {
 			fmt.Printf("Found seller %s in %s city", sellers[i].Name, city)
@@ -132,7 +131,7 @@ func WriteProducts(productsSold []Product, productsLeft []Product, jsonPath stri
 		allProducts = append(allProducts, product)
 	}
 
-	for i, _ := range productsLeft {
+	for i := range productsLeft {
 		productsLeft = append(allProducts, productsLeft[i])
 	}
 
