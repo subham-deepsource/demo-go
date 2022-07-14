@@ -6,7 +6,3 @@ enabled = true
 
   [analyzers.meta]
   import_root = "github.com/subham-deepsource/demo-go"
-
-[[transformers]]
-name = "gofumpt"
-enabled = true
