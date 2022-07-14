@@ -77,7 +77,7 @@ func (c routerCtx) GreyscaleImage(w http.ResponseWriter, r *http.Request) {
 	vars := mux.Vars(r)
 	img := vars["image"]
 
-	key := []byte(fmt.Sprintf("%x", fastHash([]byte(img))))
+	key := []byte(fmt.Sprintf("%x", fastHash(true, []byte(img))))
 
 	val, err := c.db.Get(GreyTID, key)
 	if err == nil {

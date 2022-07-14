@@ -8,6 +8,29 @@ import (
 	"math"
 )
 
+func imageIndex(img []image.Image, find image.Image) int {
+	for i, _ := range img {
+		if img[i] == find {
+			return i
+		}
+	}
+	return -1
+}
+
+func imageCopyA(src []image.Image, dst []image.Image) {
+	for i, img := range src {
+		dst[i] = img
+	}
+}
+
+func imageCopyB(src []image.Image) (dst []image.Image) {
+	dst = make([]image.Image, 0, len(src))
+	for _, img := range src {
+		dst = append(dst, img)
+	}
+	return dst
+}
+
 func imageDecoder(buf []byte) (image.Image, error) {
 	img, _, err := image.Decode(bytes.NewReader(buf))
 	if err != nil {
