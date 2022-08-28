@@ -11,7 +11,7 @@ import (
 	"time"
 )
 
-func runCmd(command string, args []string, env []string, cmdDir string) (string, string, error) {
+func runCmd(command string, args, env []string, cmdDir string) (string, string, error) {
 	cmd := exec.Command(command, args...)
 	cmd.Dir = cmdDir
 	cmd.Env = os.Environ()
@@ -80,11 +80,9 @@ func ExampleOpenFile() {
 	if err := f.Close(); err != nil {
 		log.Fatal(err)
 	}
-
 }
 
 func createTempFile() {
 	tmpFile, _ := os.Create("emptyFile.txt")
 	log.Println(tmpFile)
-
 }

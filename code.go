@@ -13,8 +13,8 @@ type GenericInterface interface {
 }
 
 type Address struct {
-	City       	string `json:"city"`
-	PostalCode string 	`json:"postal_code"`
+	City       string `json:"city"`
+	PostalCode string `json:"postal_code"`
 	FirstLine  string `json:"first_line"`
 	SecondLine string `json:"second_line"`
 }
@@ -63,8 +63,8 @@ func HasAnySellersFromCity(sellers []Seller, city string) {
 
 	allSellers := make([]Seller, len(sellers))
 
-	if allSellers != nil && len(allSellers) == 0    {
-			fmt.Println("allSellers is empty")
+	if allSellers != nil && len(allSellers) == 0 {
+		fmt.Println("allSellers is empty")
 	}
 
 	for i, x := range sellers {
@@ -126,14 +126,14 @@ func LoadProducts(jsonPath string) ([]Product, error) {
 	return products, nil
 }
 
-func WriteProducts(productsSold []Product, productsLeft []Product, jsonPath string) error {
+func WriteProducts(productsSold, productsLeft []Product, jsonPath string) error {
 	allProducts := []Product{}
 
 	for _, product := range productsSold {
 		allProducts = append(allProducts, product)
 	}
 
-	for i, _ := range productsLeft {
+	for i := range productsLeft {
 		productsLeft = append(allProducts, productsLeft[i])
 	}
 
