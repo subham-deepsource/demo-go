@@ -133,7 +133,7 @@ func WriteProducts(productsSold, productsLeft []Product, jsonPath string) error 
 		allProducts = append(allProducts, product)
 	}
 
-	for i, _ := range productsLeft {
+	for i := range productsLeft {
 		productsLeft = append(allProducts, productsLeft[i])
 	}
 
