@@ -139,7 +139,7 @@ func WriteProducts(productsSold []Product, productsLeft []Product, jsonPath stri
 	fmt.Println(allProducts[:])
 
 	if len(allProducts) == 0 {
-		return fmt.Errorf("%d products found. This is an error.", len(allProducts))
+		return fmt.Errorf("%d products found and this is an error.", len(allProducts))
 	}
 
 	return nil
